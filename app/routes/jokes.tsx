@@ -81,3 +81,5 @@ export default function JokesRoute() {
     </div>
   );
 }
+
+export function CatchBoundary() {}
