@@ -1,6 +1,6 @@
 import { Joke, User } from "@prisma/client";
 import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
-import { Outlet, Link } from "remix";
+import { Outlet, Link, Form } from "remix";
 import { db } from "~/utils/db.server";
 import { getUser } from "~/utils/session.server";
 import stylesUrl from "../styles/jokes.css";
@@ -44,11 +44,11 @@ export default function JokesRoute() {
           {data.user ? (
             <div className="user-info">
               <span>{`Hi ${data.user.username}`}</span>
-              <form action="/logout" method="post">
+              <Form action="/logout" method="post">
                 <button type="submit" className="button">
                   Logout
                 </button>
-              </form>
+              </Form>
             </div>
           ) : (
             <Link to="/login">Login</Link>
@@ -64,7 +64,9 @@ export default function JokesRoute() {
               {data.jokes.map((joke) => {
                 return (
                   <li key={joke.id}>
-                    <Link to={joke.id}>{joke.name}</Link>
+                    <Link to={joke.id} prefetch="intent">
+                      {joke.name}
+                    </Link>
                   </li>
                 );
               })}
