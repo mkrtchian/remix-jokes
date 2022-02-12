@@ -50,6 +50,7 @@ export function getUserSession(request: Request) {
 
 export async function getUserId(request: Request) {
   const session = await getUserSession(request);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const userId = session.get("userId");
   if (!userId || typeof userId !== "string") return null;
   return userId;
@@ -66,9 +67,11 @@ export async function requireUserId(
   redirectTo: string = new URL(request.url).pathname
 ) {
   const session = await getUserSession(request);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const userId = session.get("userId");
   if (!userId || typeof userId !== "string") {
     const searchParams = new URLSearchParams([["redirectTo", redirectTo]]);
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     throw redirect(`/login?${searchParams}`);
   }
   return userId;

@@ -1,6 +1,12 @@
 import { Joke, User } from "@prisma/client";
-import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
-import { Outlet, Link, Form } from "remix";
+import {
+  Form,
+  Link,
+  LinksFunction,
+  LoaderFunction,
+  Outlet,
+  useLoaderData,
+} from "remix";
 import { db } from "~/utils/db.server";
 import { getUser } from "~/utils/session.server";
 import stylesUrl from "../styles/jokes.css";
@@ -83,5 +89,3 @@ export default function JokesRoute() {
     </div>
   );
 }
-
-export function CatchBoundary() {}

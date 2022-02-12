@@ -18,7 +18,7 @@ async function seed() {
   );
 }
 
-seed();
+void seed();
 
 function getJokes() {
   // shout-out to https://icanhazdadjoke.com/

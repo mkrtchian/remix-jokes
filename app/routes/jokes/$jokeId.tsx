@@ -1,16 +1,9 @@
-import type { ActionFunction, LoaderFunction, MetaFunction } from "remix";
-import {
-  Link,
-  useLoaderData,
-  useParams,
-  useCatch,
-  redirect,
-  Form,
-} from "remix";
 import type { Joke } from "@prisma/client";
-import { db } from "~/utils/db.server";
-import { requireUserId, getUserId } from "~/utils/session.server";
+import type { ActionFunction, LoaderFunction, MetaFunction } from "remix";
+import { redirect, useCatch, useLoaderData, useParams } from "remix";
 import { JokeDisplay } from "~/components/joke";
+import { db } from "~/utils/db.server";
+import { getUserId, requireUserId } from "~/utils/session.server";
 
 export const meta: MetaFunction = ({
   data,
@@ -101,6 +94,8 @@ export function CatchBoundary() {
 export function ErrorBoundary() {
   const { jokeId } = useParams();
   return (
-    <div className="error-container">{`There was an error loading joke by the id ${jokeId}. Sorry.`}</div>
+    <div className="error-container">{`There was an error loading joke by the id ${
+      jokeId ? jokeId : ""
+    }. Sorry.`}</div>
   );
 }
