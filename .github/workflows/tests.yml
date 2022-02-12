@@ -26,6 +26,6 @@ jobs:
       - name: Run eslint
         run: npm run lint
       - name: Run typescript
-        run: npm run type-check
+        run: npm run type
       - name: Run build to make sure it doesn't crash
         run: npm run build
