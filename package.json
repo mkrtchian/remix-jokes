@@ -16,7 +16,7 @@
     "test-all": "npm run lint && npm run type"
   },
   "dependencies": {
-    "@prisma/client": "^3.8.1",
+    "@prisma/client": "^3.9.2",
     "@remix-run/react": "^1.1.3",
     "@remix-run/serve": "^1.1.3",
     "bcryptjs": "^2.4.3",
