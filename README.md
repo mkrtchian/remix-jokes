@@ -11,11 +11,10 @@ The app is [live on Fly.io](https://remix-jokes-roman.fly.dev/).
 ## Quick install and run locally
 
 ```bash
-npm run install
+yarn install
 printf 'DATABASE_URL="file:./dev.db"\nSESSION_SECRET="blablablablabalbabla"' > .env
-npx prisma db push
-npx prisma db seed
-npm run dev
+yarn db:reset
+yarn dev
 ```
 
 ## Deploy to Fly.io

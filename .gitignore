@@ -1,6 +1,15 @@
 node_modules
+
+# artifacts
 /.cache
 /build
 /public/build
+
+# database
 .env
 /prisma/dev.db
+/prisma/e2e.db
+
+# e2e
+/e2e/screenshots
+/e2e/videos

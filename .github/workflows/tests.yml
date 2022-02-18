@@ -22,10 +22,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm install
+        run: yarn install
       - name: Run eslint
-        run: npm run lint
+        run: yarn lint
       - name: Run typescript
-        run: npm run type
-      - name: Run build to make sure it doesn't crash
-        run: npm run build
+        run: yarn type-check
+      - name: Run end to end tests
+        run: yarn e2e:ci
