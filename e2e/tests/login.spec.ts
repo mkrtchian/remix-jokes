@@ -36,3 +36,5 @@ function checkUserLoggedIn() {
   cy.getCookie("RJ_session").should("exist");
   cy.contains("Hi Roman");
 }
+
+export {}
