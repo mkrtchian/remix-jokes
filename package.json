@@ -15,7 +15,7 @@
     "type-check": "tsc",
     "test-all": "yarn lint && yarn type-check",
     "e2e": "yarn e2e:db:reset && start-test 'PORT=3001 DATABASE_URL=file:./e2e.db yarn dev' 3001 'cypress open'",
-    "e2e:ci": "yarn e2e:db:reset && yarn build && start-test 'PORT=3001 DATABASE_URL=file:./e2e.db yarn start' 3001 'cypress run'",
+    "e2e:ci": "yarn e2e:db:reset && yarn build && start-test 'PORT=3001 DATABASE_URL=file:./e2e.db SESSION_SECRET=blabla yarn start' 3001 'cypress run'",
     "db:reset": "npx prisma migrate reset",
     "e2e:db:reset": "DATABASE_URL=file:./e2e.db npx prisma migrate reset -f"
   },
