@@ -12,8 +12,12 @@
     "postinstall": "remix setup node",
     "start": "remix-serve build",
     "lint": "eslint --max-warnings=0 .",
-    "type": "tsc",
-    "test-all": "npm run lint && npm run type"
+    "type-check": "tsc",
+    "test-all": "yarn lint && yarn type-check",
+    "e2e": "yarn e2e:db:reset && start-test 'PORT=3001 DATABASE_URL=file:./e2e.db yarn dev' 3001 'cypress open'",
+    "e2e:ci": "yarn e2e:db:reset && yarn build && start-test 'PORT=3001 DATABASE_URL=file:./e2e.db SESSION_SECRET=blabla yarn start' 3001 'cypress run'",
+    "db:reset": "npx prisma migrate reset",
+    "e2e:db:reset": "DATABASE_URL=file:./e2e.db npx prisma migrate reset -f"
   },
   "dependencies": {
     "@prisma/client": "^3.8.1",
@@ -29,12 +33,15 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "cypress": "^9.5.0",
     "esbuild-register": "^3.3.2",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^26.1.0",
+    "eslint-plugin-jest-dom": "^4.0.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
@@ -42,6 +49,7 @@
     "prettier": "^2.5.1",
     "prettier-plugin-organize-imports": "^2.3.4",
     "prisma": "^3.8.1",
+    "start-server-and-test": "^1.14.0",
     "typescript": "^4.1.2"
   },
   "engines": {
