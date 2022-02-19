@@ -34,7 +34,7 @@ function performLogout() {
 function checkUserLoggedIn() {
   cy.url().should("include", "/jokes");
   cy.getCookie("RJ_session").should("exist");
-  cy.contains("Hi Roman");
+  cy.contains("Hi Roman").should("exist");
 }
 
 export {}
