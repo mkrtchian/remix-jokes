@@ -1,4 +1,4 @@
-import { Joke, User } from "@prisma/client";
+import { Joke } from "@prisma/client";
 import {
   Form,
   Link,
@@ -20,7 +20,10 @@ export const links: LinksFunction = () => {
   ];
 };
 
-type LoaderData = { user: User | null; jokes: Pick<Joke, "id" | "name">[] };
+type LoaderData = {
+  user: Awaited<ReturnType<typeof getUser>>;
+  jokes: Pick<Joke, "id" | "name">[];
+};
 
 export let loader: LoaderFunction = async ({
   request,
