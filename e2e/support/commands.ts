@@ -41,3 +41,5 @@ Cypress.Commands.add("logout", () => {
   cy.contains("Logout").click();
   cy.contains("Hi Roman").should("not.exist");
 });
+
+export {};
