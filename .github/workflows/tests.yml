@@ -29,3 +29,9 @@ jobs:
         run: yarn type-check
       - name: Run end to end tests
         run: yarn e2e:ci
+      - name: Archive end to end outputs
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: end-to-end-output
+          path: e2e/
