@@ -5,6 +5,7 @@
   "fixturesFolder": "e2e/fixtures",
   "pluginsFile": false,
   "screenshotsFolder": "e2e/screenshots",
-  "supportFile": false,
-  "videosFolder": "e2e/videos"
+  "supportFile": "e2e/support/index.ts",
+  "videosFolder": "e2e/videos",
+  "experimentalSessionSupport": true
 }
