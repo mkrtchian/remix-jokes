@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import "@testing-library/cypress/add-commands";
 
 Cypress.Commands.add(
   "login",
@@ -25,8 +26,8 @@ function performLogin({ username, password, register = false }: PerformLogin) {
   if (register) {
     cy.get('[type="radio"]').check("register");
   }
-  cy.get("input[name=username]").type(username);
-  cy.get("input[name=password]").type(password);
+  cy.findByLabelText("Username").type(username);
+  cy.findByLabelText("Password").type(password);
   cy.contains("Submit").click();
   checkUserLoggedIn(username);
 }

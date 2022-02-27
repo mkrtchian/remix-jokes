@@ -16,8 +16,8 @@ describe("Create and display jokes", () => {
 
 function createJoke() {
   cy.contains("Add your own").click();
-  cy.get("input[name=name]").type("My own joke");
-  cy.get("textarea[name=content]").type("My joke content.");
+  cy.findByLabelText("Name:").type("My own joke");
+  cy.findByLabelText("Content:").type("My joke content.");
   cy.contains(/^Add$/).click();
 }
 

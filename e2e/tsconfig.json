@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["es5", "dom"],
-    "types": ["cypress"]
+    "types": ["node", "cypress", "@testing-library/cypress"]
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "noEmit": true
 }
