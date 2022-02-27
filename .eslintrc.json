@@ -28,6 +28,19 @@
       "extends": [
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ]
+    },
+    {
+      "files": ["e2e/**/*.ts", "e2e/**/*.tsx"],
+      "parserOptions": {
+        "project": ["./e2e/tsconfig.json"]
+      },
+      "rules": {
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off"
+      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ]
     }
   ]
 }
