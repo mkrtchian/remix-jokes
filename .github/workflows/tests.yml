@@ -10,7 +10,8 @@ env:
   CI: true
 
 jobs:
-  lint_and_tests:
+  lint_and_unit_tests:
+    name: Run eslint, typescript and jest unit tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -29,6 +30,22 @@ jobs:
         run: yarn type-check
       - name: Run typescript on end to end tests
         run: yarn type-check:e2e
+
+  end_to_end_tests:
+    name: Run end to end tests
+    needs: [lint_and_unit_tests]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: yarn install
       - name: Run end to end tests
         run: yarn e2e:ci
       - name: Archive end to end outputs
@@ -37,3 +54,19 @@ jobs:
         with:
           name: end-to-end-output
           path: e2e/
+
+  deploy_fly:
+    #if: github.event_name == 'push'
+    name: Deploy the whole app on Fly.io
+    needs: [lint_and_unit_tests, end_to_end_tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+      - uses: actions/checkout@v2
+      - name: Deploy to Fly.io
+        uses: superfly/flyctl-actions@1.3
+        with:
+          args: "deploy --build-arg COMMIT_SHA=${{ github.sha }}"
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
