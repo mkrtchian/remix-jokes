@@ -55,7 +55,7 @@ jobs:
           path: e2e/
 
   deploy_fly:
-    #if: github.event_name == 'push'
+    if: github.event_name == 'push'
     name: Deploy the whole app on Fly.io
     needs: [lint_and_unit_tests, end_to_end_tests]
     runs-on: ubuntu-latest
