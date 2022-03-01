@@ -47,7 +47,7 @@ export default function JokesRoute() {
           <h1 className="home-link">
             <Link to="/" title="Remix Jokes" aria-label="Remix Jokes">
               <span className="logo">🤪</span>
-              <span className="logo-medium">J🤪KES</span>
+              <span className="logo-medium">REMIX J🤪KES</span>
             </Link>
           </h1>
           {data.user ? (
