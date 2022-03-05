@@ -5675,6 +5675,11 @@ remark-rehype@^9.0.0:
     mdast-util-to-hast "^11.0.0"
     unified "^10.0.0"
 
+remix-params-helper@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/remix-params-helper/-/remix-params-helper-0.4.7.tgz#4558c67076e6b2c21e203ef7eaad0c76ba51afdc"
+  integrity sha512-DUqVmMG9vmMtj1AAj9y1yGN2CXfqFvYYuIn+5j1ylj6Kp/Jy6tgGcCSDzeB+FmB0E2G0Z3kYIavPIETFRMl43Q==
+
 remix@^1.2.2:
   version "1.2.2"
   resolved "https://registry.npmjs.org/remix/-/remix-1.2.2.tgz"
@@ -6717,6 +6722,11 @@ yauzl@^2.10.0:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
+
+zod@^3.13.4:
+  version "3.13.4"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.13.4.tgz#5d6fe03ef4824a637d7ef50b5441cf6ab3acede0"
+  integrity sha512-LZRucWt4j/ru5azOkJxCfpR87IyFDn8h2UODdqvXzZLb3K7bb9chUrUIGTy3BPsr8XnbQYfQ5Md5Hu2OYIo1mg==
 
 zwitch@^2.0.0:
   version "2.0.2"
