@@ -5699,10 +5699,10 @@ remix-validated-form@^4.1.8:
     lodash "^4.17.21"
     tiny-invariant "^1.2.0"
 
-remix@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/remix/-/remix-1.2.2.tgz"
-  integrity sha512-gVYuBzKYcSmtp/U/q8CK+yFUbcI72KdFEDMVWlKwck/dAQwH7x9PJp/IRiIzkj9/7S/2oLCG7yyJtykE2JNnlw==
+remix@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/remix/-/remix-1.2.3.tgz#49c1b47b70a4d7ce8830921ceb4b058f5054cf16"
+  integrity sha512-0L/pCQ0XC7mgs1I1eCnXBENPwrynIUXVmV/hdCliibebIWha0wZUm9NXLffL5oz4MRKubGA/gRsCRD+WvKTVZw==
   dependencies:
     fs-extra "^10.0.0"
 
