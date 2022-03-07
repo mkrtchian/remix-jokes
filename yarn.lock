@@ -1270,6 +1270,11 @@
     set-cookie-parser "^2.4.8"
     source-map "^0.7.3"
 
+"@remix-validated-form/with-zod@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@remix-validated-form/with-zod/-/with-zod-2.0.1.tgz#83093578414b4fbf14841778b22facbd1e981ead"
+  integrity sha512-PerWFOeMFSd8FZRcT2kcqEnYEcmokBzuk87URZ5ij0cRtTlrGNUk7UlxYLG1e7lbPWBj+QfSSsLBrJu8PxhNeg==
+
 "@rollup/pluginutils@^4.0.0":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.1.2.tgz#ed5821c15e5e05e32816f5fb9ec607cdf5a75751"
@@ -4151,6 +4156,11 @@ joi@^17.4.0:
     "@sideway/formula" "^3.0.0"
     "@sideway/pinpoint" "^2.0.0"
 
+jotai@^1.5.3:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-1.6.0.tgz#81412756dab42fcb712530fba512e5e43bd0de15"
+  integrity sha512-J/+aD9R1XDcNeY8drg/y/I47eUivQ13HGmLmA33w95SvJJLBStSF5WxYrmLgbuWcDC6MpRecF3g/GBchPJNcZg==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -5680,6 +5690,15 @@ remix-params-helper@^0.4.7:
   resolved "https://registry.yarnpkg.com/remix-params-helper/-/remix-params-helper-0.4.7.tgz#4558c67076e6b2c21e203ef7eaad0c76ba51afdc"
   integrity sha512-DUqVmMG9vmMtj1AAj9y1yGN2CXfqFvYYuIn+5j1ylj6Kp/Jy6tgGcCSDzeB+FmB0E2G0Z3kYIavPIETFRMl43Q==
 
+remix-validated-form@^4.1.8:
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/remix-validated-form/-/remix-validated-form-4.1.8.tgz#d4b6672c06cf88737d65f89c54545f68e7bdfe31"
+  integrity sha512-3pOcIAHnvcPutkuc3zNQMSni5ySYYvxoGFOe6x6rbNO4yRVedkcncYMzkDAbTwrK6+/nZdnkaLuYHz6uGtn9Dg==
+  dependencies:
+    jotai "^1.5.3"
+    lodash "^4.17.21"
+    tiny-invariant "^1.2.0"
+
 remix@^1.2.2:
   version "1.2.2"
   resolved "https://registry.npmjs.org/remix/-/remix-1.2.2.tgz"
@@ -6193,6 +6212,11 @@ through@2, through@^2.3.8, through@~2.3, through@~2.3.1:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
+
+tiny-invariant@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.2.0.tgz#a1141f86b672a9148c72e978a19a73b9b94a15a9"
+  integrity sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==
 
 tmp@~0.2.1:
   version "0.2.1"
