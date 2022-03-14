@@ -5691,10 +5691,10 @@ remark-rehype@^9.0.0:
     mdast-util-to-hast "^11.0.0"
     unified "^10.0.0"
 
-remix-params-helper@^0.4.7:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/remix-params-helper/-/remix-params-helper-0.4.7.tgz#4558c67076e6b2c21e203ef7eaad0c76ba51afdc"
-  integrity sha512-DUqVmMG9vmMtj1AAj9y1yGN2CXfqFvYYuIn+5j1ylj6Kp/Jy6tgGcCSDzeB+FmB0E2G0Z3kYIavPIETFRMl43Q==
+remix-params-helper@^0.4.8:
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/remix-params-helper/-/remix-params-helper-0.4.8.tgz#7927de8799ca78bfb646a44dc13ffc1b713b4e38"
+  integrity sha512-4vDSeH1IOMaw6gQRtRfdqxXSpLaySVgxBvXpwPCZ0H3iJ62/uNMM7r9xpgfGN4Ln62tfqYOSmgalt4UMMX9ScA==
 
 remix-validated-form@^4.1.8:
   version "4.1.8"
