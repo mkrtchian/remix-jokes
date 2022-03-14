@@ -1,17 +1,14 @@
-import {
-  useActionData,
-  redirect,
-  json,
-  useCatch,
-  Link,
-  Form,
-  useTransition,
-} from "remix";
-import type { LoaderFunction } from "remix";
-import type { ActionFunction } from "remix";
-import { db } from "~/utils/db.server";
-import { requireUserId, getUserId } from "~/utils/session.server";
+import { withZod } from "@remix-validated-form/with-zod";
+import type { ActionFunction, LoaderFunction } from "remix";
+import { Link, redirect, useActionData, useCatch, useTransition } from "remix";
+import { ValidatedForm, validationError } from "remix-validated-form";
+import { z } from "zod";
+import { Input } from "~/components/forms/Input";
+import { SubmitButton } from "~/components/forms/SubmitButton";
+import { Textarea } from "~/components/forms/Textarea";
 import { JokeDisplay } from "~/components/joke";
+import { db } from "~/utils/db.server";
+import { getUserId, requireUserId } from "~/utils/session.server";
 
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request);
@@ -20,6 +17,22 @@ export const loader: LoaderFunction = async ({ request }) => {
   }
   return {};
 };
+
+const dataSchema = z.object({
+  name: z.string().min(2).nonempty("That joke's name is too short"),
+  content: z.string().min(10).nonempty("That joke is too short"),
+});
+type DataSchema = z.infer<typeof dataSchema>;
+const validator = withZod(dataSchema);
+
+type ActionData = {
+  formError?: string;
+  fields?: DataSchema;
+};
+
+function stringifyNulls(element: string | null): string {
+  return typeof element === "string" ? element : "";
+}
 
 function validateJokeContent(content: string) {
   if (content.length < 10) {
@@ -33,49 +46,16 @@ function validateJokeName(name: string) {
   }
 }
 
-type ActionData = {
-  formError?: string;
-  fieldErrors?: {
-    name: string | undefined;
-    content: string | undefined;
-  };
-  fields?: {
-    name: string;
-    content: string;
-  };
-};
-
-const badRequest = (data: ActionData) => json(data, { status: 400 });
-
-function stringifyNulls(element: string | null): string {
-  return typeof element === "string" ? element : "";
-}
-
 export let action: ActionFunction = async ({ request }) => {
+  const data = await validator.validate(await request.formData());
+  if (data.error) return validationError(data.error);
+  const { name, content } = data.data;
   const userId = await requireUserId(request);
-  const form = await request.formData();
-  const name = form.get("name");
-  const content = form.get("content");
-  if (
-    (typeof name !== "string" && name !== null) ||
-    (typeof content !== "string" && content !== null)
-  ) {
-    return badRequest({
-      formError: `Form not submitted correctly.`,
-    });
-  }
 
   const fields = {
     name: stringifyNulls(name),
     content: stringifyNulls(content),
   };
-  const fieldErrors = {
-    name: validateJokeName(fields.name),
-    content: validateJokeContent(fields.content),
-  };
-  if (Object.values(fieldErrors).some(Boolean)) {
-    return badRequest({ fieldErrors, fields });
-  }
   const joke = await db.joke.create({
     data: { ...fields, jokesterId: userId },
   });
@@ -108,58 +88,22 @@ export default function NewJokeRoute() {
   return (
     <div>
       <p>Add your own hilarious joke</p>
-      <Form method="post">
+      <ValidatedForm validator={validator} method="post">
+        <Input
+          label="Name:"
+          type="text"
+          name="name"
+          defaultValue={actionData?.fields?.name}
+        />
+        <Textarea
+          label="Content:"
+          name="content"
+          defaultValue={actionData?.fields?.content}
+        />
         <div>
-          <label htmlFor="name">
-            Name:{" "}
-            <input
-              type="text"
-              defaultValue={actionData?.fields?.name}
-              name="name"
-              aria-invalid={Boolean(actionData?.fieldErrors?.name) || undefined}
-              aria-describedby={
-                actionData?.fieldErrors?.name ? "name-error" : undefined
-              }
-              id="name"
-            />
-          </label>
-          {actionData?.fieldErrors?.name ? (
-            <p className="form-validation-error" role="alert" id="name-error">
-              {actionData.fieldErrors.name}
-            </p>
-          ) : null}
+          <SubmitButton label="Add" submittingLabel="Adding..." />
         </div>
-        <div>
-          <label htmlFor="content">
-            Content:{" "}
-            <textarea
-              defaultValue={actionData?.fields?.content}
-              name="content"
-              aria-invalid={
-                Boolean(actionData?.fieldErrors?.content) || undefined
-              }
-              aria-describedby={
-                actionData?.fieldErrors?.content ? "content-error" : undefined
-              }
-              id="content"
-            />
-          </label>
-          {actionData?.fieldErrors?.content ? (
-            <p
-              className="form-validation-error"
-              role="alert"
-              id="content-error"
-            >
-              {actionData.fieldErrors.content}
-            </p>
-          ) : null}
-        </div>
-        <div>
-          <button type="submit" className="button">
-            Add
-          </button>
-        </div>
-      </Form>
+      </ValidatedForm>
     </div>
   );
 }
