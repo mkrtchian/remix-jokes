@@ -5700,12 +5700,10 @@ remix-validated-form@^4.1.8:
     lodash "^4.17.21"
     tiny-invariant "^1.2.0"
 
-remix@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/remix/-/remix-1.2.3.tgz#49c1b47b70a4d7ce8830921ceb4b058f5054cf16"
-  integrity sha512-0L/pCQ0XC7mgs1I1eCnXBENPwrynIUXVmV/hdCliibebIWha0wZUm9NXLffL5oz4MRKubGA/gRsCRD+WvKTVZw==
-  dependencies:
-    fs-extra "^10.0.0"
+remix@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/remix/-/remix-1.3.2.tgz#2dd4691624eba52742d589314758f9100d6ec8e3"
+  integrity sha512-jH9PHvATwvYDvx6xuQAD2lwhiwapCk94zF5rE/qUZe0uuKFCkMJXLULYp65CmgcN5c39EyITLz1ZFDIMGCi86g==
 
 request-progress@^3.0.0:
   version "3.0.0"
