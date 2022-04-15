@@ -3029,10 +3029,10 @@ eslint-plugin-jsx-a11y@^6.5.1:
     language-tags "^1.0.5"
     minimatch "^3.0.4"
 
-eslint-plugin-react-hooks@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz#318dbf312e06fab1c835a4abef00121751ac1172"
-  integrity sha512-XslZy0LnMn+84NEG9jSGR6eGqaZB3133L8xewQo3fQagbQuGt7a63gf+P1NGKZavEYEC3UXaWEAA/AqDkuN6xA==
+eslint-plugin-react-hooks@^4.3.0, eslint-plugin-react-hooks@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.4.0.tgz#71c39e528764c848d8253e1aa2c7024ed505f6c4"
+  integrity sha512-U3RVIfdzJaeKDQKEJbz5p3NW8/L80PCATJAfuojwbaEL+gBjfGdhUcGde+WGUW46Q5sr/NgxevsIiDtNXrvZaQ==
 
 eslint-plugin-react@^7.27.1, eslint-plugin-react@^7.29.4:
   version "7.29.4"
@@ -5700,12 +5700,10 @@ remix-validated-form@^4.1.8:
     lodash "^4.17.21"
     tiny-invariant "^1.2.0"
 
-remix@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/remix/-/remix-1.2.3.tgz#49c1b47b70a4d7ce8830921ceb4b058f5054cf16"
-  integrity sha512-0L/pCQ0XC7mgs1I1eCnXBENPwrynIUXVmV/hdCliibebIWha0wZUm9NXLffL5oz4MRKubGA/gRsCRD+WvKTVZw==
-  dependencies:
-    fs-extra "^10.0.0"
+remix@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/remix/-/remix-1.3.5.tgz#f0858194dc5e73f53b7962f34fb910c0b72552cc"
+  integrity sha512-NfQXH+CYu/XkWaUAznpkk+bSfSLDqLBG1xQZWkZPccQKIbf7Pucws95GNajUFsVz+Epd1B9WBP8y3/5J2+bokQ==
 
 request-progress@^3.0.0:
   version "3.0.0"
