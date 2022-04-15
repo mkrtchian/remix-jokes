@@ -5691,10 +5691,10 @@ remix-params-helper@^0.4.8:
   resolved "https://registry.yarnpkg.com/remix-params-helper/-/remix-params-helper-0.4.8.tgz#7927de8799ca78bfb646a44dc13ffc1b713b4e38"
   integrity sha512-4vDSeH1IOMaw6gQRtRfdqxXSpLaySVgxBvXpwPCZ0H3iJ62/uNMM7r9xpgfGN4Ln62tfqYOSmgalt4UMMX9ScA==
 
-remix-validated-form@^4.1.8:
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/remix-validated-form/-/remix-validated-form-4.1.8.tgz#d4b6672c06cf88737d65f89c54545f68e7bdfe31"
-  integrity sha512-3pOcIAHnvcPutkuc3zNQMSni5ySYYvxoGFOe6x6rbNO4yRVedkcncYMzkDAbTwrK6+/nZdnkaLuYHz6uGtn9Dg==
+remix-validated-form@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/remix-validated-form/-/remix-validated-form-4.3.0.tgz#46e0adbdb2f297419d300837a500b69358b573c3"
+  integrity sha512-wNFHVFCsppk2tf2+j3BGzxm5TlfpzrHwRYaXZIskTaFrMLvpGSFNO5/AoFU2cKQNE1AabRapoNXPUxbHNkbEfQ==
   dependencies:
     jotai "^1.5.3"
     lodash "^4.17.21"
