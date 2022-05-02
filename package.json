@@ -34,7 +34,7 @@
     "zod": "^3.14.4"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.2.3",
+    "@remix-run/dev": "^1.4.3",
     "@testing-library/cypress": "^8.0.2",
     "@types/bcryptjs": "^2.4.2",
     "@types/react": "^18.0.5",
