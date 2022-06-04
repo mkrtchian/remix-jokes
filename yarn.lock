@@ -1492,10 +1492,10 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
 
-"@types/react-dom@^18.0.1":
-  version "18.0.1"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.1.tgz#cb3cc10ea91141b12c71001fede1017acfbce4db"
-  integrity sha512-jCwTXvHtRLiyVvKm9aEdHXs8rflVOGd5Sl913JZrPshfXjn8NYsTNZOz70bCsA31IR0TOqwi3ad+X4tSCBoMTw==
+"@types/react-dom@^18.0.3":
+  version "18.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.3.tgz#a022ea08c75a476fe5e96b675c3e673363853831"
+  integrity sha512-1RRW9kst+67gveJRYPxGmVy8eVJ05O43hg77G2j5m76/RFJtMbcfAs2viQ2UNsvvDg8F7OfQZx8qQcl6ymygaQ==
   dependencies:
     "@types/react" "*"
 
@@ -5686,10 +5686,10 @@ remark-rehype@^9.0.0:
     mdast-util-to-hast "^11.0.0"
     unified "^10.0.0"
 
-remix-params-helper@^0.4.8:
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/remix-params-helper/-/remix-params-helper-0.4.8.tgz#7927de8799ca78bfb646a44dc13ffc1b713b4e38"
-  integrity sha512-4vDSeH1IOMaw6gQRtRfdqxXSpLaySVgxBvXpwPCZ0H3iJ62/uNMM7r9xpgfGN4Ln62tfqYOSmgalt4UMMX9ScA==
+remix-params-helper@^0.4.10:
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/remix-params-helper/-/remix-params-helper-0.4.10.tgz#91663100282e720687edad3de57f3c88cf502715"
+  integrity sha512-1LZ1FjxCtPekg4a1R50aKA0uB2+668Wd2a0ld7LDrQ0bJ2TzijnCVr822cs8epziS6MG2bG8ZHMPDAR2t4PK+Q==
 
 remix-validated-form@^4.3.0:
   version "4.3.0"
@@ -6746,10 +6746,10 @@ yauzl@^2.10.0:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
 
-zod@^3.14.4:
-  version "3.14.4"
-  resolved "https://registry.yarnpkg.com/zod/-/zod-3.14.4.tgz#e678fe9e5469f4663165a5c35c8f3dc66334a5d6"
-  integrity sha512-U9BFLb2GO34Sfo9IUYp0w3wJLlmcyGoMd75qU9yf+DrdGA4kEx6e+l9KOkAlyUO0PSQzZCa3TR4qVlcmwqSDuw==
+zod@^3.17.3:
+  version "3.17.3"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.17.3.tgz#86abbc670ff0063a4588d85a4dcc917d6e4af2ba"
+  integrity sha512-4oKP5zvG6GGbMlqBkI5FESOAweldEhSOZ6LI6cG+JzUT7ofj1ZOC0PJudpQOpT1iqOFpYYtX5Pw0+o403y4bcg==
 
 zwitch@^2.0.0:
   version "2.0.2"
