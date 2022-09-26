@@ -5795,10 +5795,10 @@ remix-validated-form@^4.5.0:
     tiny-invariant "^1.2.0"
     zustand "^4.0.0-rc.1"
 
-remix@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/remix/-/remix-1.5.1.tgz#296effdb26f08860d86daf6319cdb6104c5ba897"
-  integrity sha512-95+4LlrUUJuIVOjSTjHMnvEDJcYNEhb60zd4tT1bRSDW11jXDAiYGimCoDAFPWv4DbpVcmtnujjQ+ym/YlP2nA==
+remix@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/remix/-/remix-1.7.2.tgz#e7b76860356ac59dcd66cbe0a91f98b200aefbba"
+  integrity sha512-cPxwu9UK/J/R8uIYO3/LvxMlqqUbSIZZ9Xk5jvDcB4twl3M1H8X3+DRGi2nDYHsR7NBmiGPXMEDPtO7neY9spQ==
 
 request-progress@^3.0.0:
   version "3.0.0"
