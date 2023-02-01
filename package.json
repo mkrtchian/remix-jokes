@@ -28,7 +28,7 @@
     "bcryptjs": "^2.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.1.0",
-    "remix": "^1.5.1",
+    "remix": "^1.12.0",
     "remix-params-helper": "^0.4.10",
     "remix-validated-form": "^4.5.0",
     "zod": "^3.17.3"
